@@ -1,1 +1,223 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
 
+body{
+    min-height:100vh;
+    background:linear-gradient(135deg,#0f172a,#1e3a8a,#06b6d4);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+}
+
+.container{
+    width:90%;
+    max-width:1200px;
+}
+
+.header{
+    text-align:center;
+    color:white;
+    margin-bottom:40px;
+}
+
+.header h1{
+    font-size:60px;
+    text-shadow:0 0 20px #00ffff;
+}
+
+.header p{
+    font-size:20px;
+    opacity:.9;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:rgba(255,255,255,0.1);
+    backdrop-filter:blur(15px);
+    border:1px solid rgba(255,255,255,0.2);
+    border-radius:25px;
+    padding:30px;
+    color:white;
+    text-align:center;
+    transition:.4s;
+    box-shadow:0 0 20px rgba(0,255,255,.2);
+}
+
+.card:hover{
+    transform:translateY(-10px) scale(1.05);
+    box-shadow:0 0 35px #00ffff;
+}
+
+.card h2{
+    font-size:30px;
+    margin-bottom:15px;
+}
+
+.card p{
+    line-height:1.6;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:20px;
+    padding:12px 25px;
+    border-radius:30px;
+    background:#00ffff;
+    color:#000;
+    text-decoration:none;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:scale(1.1);
+    box-shadow:0 0 25px #00ffff;
+}
+body{
+    min-height:100vh;
+    margin:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    background:linear-gradient(
+        -45deg,
+        #020617,
+        #0f172a,
+        #1e3a8a,
+        #2563eb,
+        #06b6d4
+    );
+    background-size:400% 400%;
+    animation:bgMove 12s ease infinite;
+    position:relative;
+}
+
+/* تیشکی پشتەوە */
+body::before{
+    content:"";
+    position:absolute;
+    width:600px;
+    height:600px;
+    background:#00ffff;
+    border-radius:50%;
+    filter:blur(250px);
+    top:-200px;
+    left:-200px;
+    opacity:.35;
+}
+
+body::after{
+    content:"";
+    position:absolute;
+    width:500px;
+    height:500px;
+    background:#8b5cf6;
+    border-radius:50%;
+    filter:blur(220px);
+    bottom:-150px;
+    right:-150px;
+    opacity:.35;
+}
+
+@keyframes bgMove{
+    0%{
+        background-position:0% 50%;
+    }
+    50%{
+        background-position:100% 50%;
+    }
+    100%{
+        background-position:0% 50%;
+    }
+}
+body{
+    min-height:100vh;
+    margin:0;
+    overflow:hidden;
+    background:linear-gradient(
+        135deg,
+        #000000,
+        #020617,
+        #0f172a,
+        #111827
+    );
+    background-size:400% 400%;
+    animation:bgMove 15s ease infinite;
+    position:relative;
+}
+
+/* گۆڵەی ڕووناکی */
+body::before{
+    content:"";
+    position:absolute;
+    width:500px;
+    height:500px;
+    background:#00ffff;
+    border-radius:50%;
+    filter:blur(220px);
+    top:-200px;
+    left:-200px;
+    opacity:.15;
+}
+
+body::after{
+    content:"";
+    position:absolute;
+    width:450px;
+    height:450px;
+    background:#7c3aed;
+    border-radius:50%;
+    filter:blur(200px);
+    bottom:-150px;
+    right:-150px;
+    opacity:.15;
+}
+
+@keyframes bgMove{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+/* ئەستێرەکان */
+.star{
+    position:absolute;
+    width:2px;
+    height:2px;
+    background:white;
+    border-radius:50%;
+    box-shadow:0 0 10px white;
+    animation:twinkle 3s infinite;
+}
+
+@keyframes twinkle{
+    0%,100%{
+        opacity:.2;
+    }
+    50%{
+        opacity:1;
+    }
+}
+for(let i=0;i<100;i++){
+    let star=document.createElement("div");
+    star.classList.add("star");
+
+    star.style.left=Math.random()*100+"vw";
+    star.style.top=Math.random()*100+"vh";
+
+    star.style.animationDuration=
+    (Math.random()*3+2)+"s";
+
+    document.body.appendChild(star);
+}
